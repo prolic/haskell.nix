@@ -5,7 +5,7 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.src.flake = false;
   outputs = { self, src, nixpkgs, flake-utils, haskellNix }:
-    flake-utils.lib.eachSystem [ "x86_64-darwin" ] (system:
+    flake-utils.lib.eachSystem [ "x86_64-darwin" "x86_64-linux" "aarch64-darwin" "aarch64-linux"] (system:
     let
       overlays = [ haskellNix.overlay
         (final: prev: {
@@ -13,13 +13,6 @@
             final.haskell-nix.hix.project {
               inherit src;
             };
-        })
-        (final: prev: {
-          evalPackages = import final.path {
-            # If we are building a flake there will be no currentSystem attribute
-            system = "x86_64-darwin";
-            overlays = [ haskellNix.overlay ];
-          };
         })
       ];
       pkgs = import nixpkgs { inherit system overlays; inherit (haskellNix) config; };

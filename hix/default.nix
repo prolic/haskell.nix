@@ -33,11 +33,8 @@ in pkgs.symlinkJoin {
         target=$1
         shift
         case $target in
-        .)
-          nix build "path:${hixProject}" --override-input src ./. "$@"
-          ;;
-        .#*)
-          nix build "path:${hixProject}''${target#?}" --override-input src ./. "$@"
+        *#*)
+          nix build "path:${hixProject}#''${target#*#}" --override-input src ''${target%%#*} "$@"
           ;;
         *)
           echo $target
@@ -73,6 +70,4 @@ in pkgs.symlinkJoin {
       esac
     '')
   ];
-} // {
-  project = import ./project.nix; 
 }
