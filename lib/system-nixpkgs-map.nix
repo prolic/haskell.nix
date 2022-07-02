@@ -90,7 +90,7 @@ in
   boost_unit_test_framework = [ boost ];
   boost_wave = [ boost ];
   boost_wserialization = [ boost ];
-  cdparanoia = [ cdparanoia ];
+  cdparanoia = [ cdparanoia-III ];
   tensorflow = [ libtensorflow ];
   # odbc package requires unixODBC packages to be installed in order to successfully
   # compile C sources (https://github.com/fpco/odbc/blob/master/cbits/odbc.c)
