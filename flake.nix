@@ -9,6 +9,7 @@
     nixpkgs-2205 = { url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin"; };
     nixpkgs-unstable = { url = "github:NixOS/nixpkgs/nixpkgs-unstable"; };
     nixpkgs-master = { url = "github:NixOS/nixpkgs/master"; };
+    nixpkgs-prolic = { url = "github:prolic/nixpkgs/futr"; };
     flake-utils = { url = "github:numtide/flake-utils"; };
     hydra.url = "hydra";
     hackage = {
