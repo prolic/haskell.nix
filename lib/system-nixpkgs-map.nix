@@ -34,6 +34,7 @@ in
   GLEW = [ glew ];
   GLU = [ libGLU ];
   alut = [ freealut ];
+  SDL2 = [ SDL2 ];
   X11 = with xorg; [ libX11 ];
   Xrandr = [ xorg.libXrandr ];
   Xrender = [ xorg.libXrender ];
