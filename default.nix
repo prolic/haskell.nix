@@ -3,8 +3,8 @@
 let
   nixpkgsSrc =
     builtins.fetchTarball {
-      url = "https://github.com/prolic/nixpkgs/archive/4ead7e53c1c3e59a0b932f07b9e8632417870435.tar.gz";
-      sha256 = "sha256-KeWXLchbAbqOlLT6tju631G40SzQWPqaAXQG3zH1Imw=";
+      url = "https://github.com/prolic/nixpkgs/archive/d6f5e0bc6b8d2f740b59e816c1f810fefe6eaec3.tar.gz";
+      sha256 = "sha256-AeWXLchbAbqOlLT6tju631G40SzQWPqaAXQG3zH1Imw=";
     };
   pkgs = args.pkgs or (import nixpkgsSrc {});
   flake-compat =
